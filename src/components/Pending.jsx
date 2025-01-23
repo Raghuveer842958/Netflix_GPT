@@ -46,7 +46,6 @@ const Pending = () => {
             <div className=" mt-0  pl-4 md:pl-12 relative z-20">
               <MovieList title={"Now Playing"} movie={movies} />
               <MovieList title={"Trending"} movie={movies} />
-              {/* <MovieList title={"Popular"} movies={movies.popularMovies} /> */}
               <MovieList title={"Upcoming Movies"} movie={movies} />
               <MovieList title={"Horror"} movie={movies} />
             </div>

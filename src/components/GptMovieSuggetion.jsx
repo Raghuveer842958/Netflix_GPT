@@ -1,8 +1,7 @@
 import React from "react";
 import MovieList from "./MovieList";
 
-const GptMovieSuggetion = ({movies}) => {
-  
+const GptMovieSuggetion = ({ movies }) => {
   return (
     <div>
       {/* {movies.map((movie) => {

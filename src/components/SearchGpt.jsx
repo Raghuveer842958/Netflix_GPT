@@ -5,17 +5,6 @@ import { BG_URL } from "../utils/constant";
 
 const SearchGpt = () => {
   return (
-    // <div>
-    //   <div className="fixed -z-10">
-    //     <img className="h-screen w-screen object-cover" src={BG_URL} alt="logo" />
-    //   </div>
-    //   <div>
-    //     <GptSearchBar />
-    //     {/* <GptMovieSuggetion /> */}
-    //   </div>
-    // </div>
-
-    // This is the responsive version
     <div>
       <div className="fixed -z-10">
         <img

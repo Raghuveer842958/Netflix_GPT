@@ -5,7 +5,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { removeUser } from "../utils/userSlice";
-import { toggleGptSearchView } from "../utils/gptSlice";
+import { makeGptSearchViewFalse, toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 import {
   removeNowPlayingMovies,
@@ -34,6 +34,7 @@ const Header = () => {
         dispatch(removeSelectedMovie());
         dispatch(removePlayingMMovie());
         dispatch(removeTmdbMoviesMovie());
+        dispatch(makeGptSearchViewFalse());
         navigate("/");
       })
       .catch((error) => {
@@ -50,49 +51,10 @@ const Header = () => {
   };
 
   return (
-    // <div className="fixed w-screen  bg-gradient-to-b from-black z-20 flex justify-between items-center">
-    //   <img className="w-40 " src={LOGO} alt="logo"></img>
-    //   { (
-    //     <div className="flex">
-    //       {isShowGptSearch && (
-    //         <select
-    //           className="py-2 px-4 mx-4 my-2 bg-white rounded-lg"
-    //           onClick={handleLanguageChange}
-    //         >
-    //           {SUPPORTED_LANGUAGES.map((lang) => (
-    //             <option key={lang.identifier} value={lang.identifier}>
-    //               {lang.name}
-    //             </option>
-    //           ))}
-    //         </select>
-    //       )}
 
-    //       <button
-    //         className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg z-10"
-    //         onClick={handleGptSearchClick}
-    //       >
-    //         {isShowGptSearch ? "Homepage" : "GPT Search"}
-    //       </button>
-
-    //       <button
-    //         onClick={handleSignOut}
-    //         className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg"
-    //       >
-    //         Sign Out
-    //       </button>
-
-    //     </div>
-    //   )}
-    // </div>
-
-    // This is Responsive Version
     <div className="fixed w-full bg-gradient-to-b from-black z-40 flex justify-between items-center p-2">
-      {/* Logo - Smaller for mobile, bigger for larger screens */}
       <img className="w-20 sm:w-40" src={LOGO} alt="logo" />
-
-      {/* Language Selector and Buttons */}
       <div className="flex items-center space-x-2 sm:space-x-4">
-        {/* GPT Search and Language Dropdown (Only shown in larger devices) */}
         {isShowGptSearch && (
           <select
             className="py-2 px-4 bg-white rounded-lg hidden sm:block"
@@ -106,7 +68,6 @@ const Header = () => {
           </select>
         )}
 
-        {/* GPT Search Button */}
         <button
           className="py-1.5 px-3 text-sm sm:py-2 sm:px-4 sm:text-base bg-purple-800 text-white rounded-lg"
           onClick={handleGptSearchClick}
@@ -114,7 +75,6 @@ const Header = () => {
           {isShowGptSearch ? "Homepage" : "GPT Search"}
         </button>
 
-        {/* Sign Out Button */}
         <button
           onClick={handleSignOut}
           className="py-1.5 px-3 text-sm sm:py-2 sm:px-4 sm:text-base bg-purple-800 text-white rounded-lg"
