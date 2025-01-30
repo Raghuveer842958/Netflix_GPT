@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { IMG_CDN_URL } from "../utils/constant";
 import { useDispatch } from "react-redux";
-import { makeGptSearchViewFalse, toggleGptSearchView } from "../utils/gptSlice";
+import { makeGptSearchViewFalse } from "../utils/gptSlice";
 
 const MovieCard = ({ posterPath, movieId }) => {
   // console.log("Id is :",id);

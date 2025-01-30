@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import lang from "../utils/languageConstants";
 import supportedMovies from "../utils/movieConstant";
@@ -8,7 +8,7 @@ import {
 } from "../utils/recomendedMovieSlice";
 import { API_OPTIONS } from "../utils/constant";
 import MovieList from "./MovieList";
-import GptMovieSuggetion from "./GptMovieSuggetion";
+// import GptMovieSuggetion from "./GptMovieSuggetion";
 
 const GptSearchBar = () => {
   const dispatch = useDispatch();

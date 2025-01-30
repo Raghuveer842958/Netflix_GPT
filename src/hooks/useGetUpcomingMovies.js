@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { API_OPTIONS } from "../utils/constant";
-import { addNowPlayingMovies, addPopulerMovies, addUpcomingMovies } from "../utils/movieSlice";
+import { addUpcomingMovies } from "../utils/movieSlice";
 
 const useGetUpcomingMovies = () => {
   const dispatch = useDispatch();

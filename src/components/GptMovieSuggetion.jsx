@@ -1,5 +1,5 @@
 import React from "react";
-import MovieList from "./MovieList";
+// import MovieList from "./MovieList";
 
 const GptMovieSuggetion = ({ movies }) => {
   return (

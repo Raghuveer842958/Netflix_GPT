@@ -4,7 +4,7 @@ import { addTrailerVedio } from '../utils/movieSlice';
 import { useEffect, useState } from 'react';
 
 const useGetMovieTrailer = (movieId) => {
-    const [movieTrailer,setMovieTrailer]=useState(null);
+    // const [movieTrailer,setMovieTrailer]=useState(null);
     const dispatch = useDispatch();
     const getMovieVedios = async () => {
       try {
