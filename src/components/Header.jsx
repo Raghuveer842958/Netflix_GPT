@@ -31,7 +31,6 @@ const Header = () => {
         dispatch(removeUser());
         dispatch(removeNowPlayingMovies());
         dispatch(removeTrailerVedio());
-        dispatch(removeSelectedMovie());
         dispatch(removePlayingMMovie());
         dispatch(removeTmdbMoviesMovie());
         dispatch(makeGptSearchViewFalse());

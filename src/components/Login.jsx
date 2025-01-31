@@ -19,27 +19,36 @@ const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [error, setError] = useState("");
+  const [warnning, setWarnning] = useState(false);
+
   const handleButtonClick = () => {
-    const message = checkValidData(email, password);
-    if (message) {
-      // console.log("Invalid Credential");
-      setErrorMessage(message);
+    // const checkEmailPassword = checkValidData(email, password);
+    // if (message) {
+    //   // console.log("Invalid Credential");
+    //   setErrorMessage(message);
+    //   return;
+    // }
+
+    const checkEmailPassword = checkValidData(email, password);
+    if (checkEmailPassword) {
+      setError(checkEmailPassword);
+      setWarnning(true);
+      setTimeout(() => {
+        console.log("Called Called Called");
+        setWarnning(false);
+      }, 3000);
       return;
     }
 
     if (!isSignInForm) {
       // sign up
       // console.log("Inside signUp handler");
-      createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      )
+      createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
@@ -70,11 +79,7 @@ const Login = () => {
         });
     } else {
       // login
-      signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      )
+      signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
@@ -134,7 +139,11 @@ const Login = () => {
           placeholder="Password"
           className="p-4 my-4 w-full bg-gray-700 text-lg rounded-lg"
         />
-        <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
+        
+        {warnning && (
+          <p className="text-red-500 font-bold text-lg py-2">{error}</p>
+        )}
+        
         <button
           className="p-4 my-6 bg-red-700 w-full rounded-lg text-xl font-semibold hover:bg-red-600 transition"
           onClick={handleButtonClick}

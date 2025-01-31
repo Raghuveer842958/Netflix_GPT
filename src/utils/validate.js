@@ -1,4 +1,4 @@
-const checkValidData = (email,password) => {
+const checkValidData = (email, password) => {
   const checkEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
     email
   );
@@ -9,8 +9,8 @@ const checkValidData = (email,password) => {
     );
   // console.log(checkPassword);
 
-  if (!checkEmail) return "Email is not valid";
-  if (!checkPassword) return "Password is not valid";
+  if (!checkEmail) return "Invalid Email";
+  if (!checkPassword) return "Invalid Password";
   if (checkEmail && checkPassword) return null;
 };
 
