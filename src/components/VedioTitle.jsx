@@ -15,9 +15,9 @@ const VedioTitle = ({ title, overview }) => {
 
       {/* Buttons */}
       <div className="hidden sm:block flex sm:flex-row justify-start space-y-4 sm:space-y-0 sm:space-x-4 mt-6 md:mt-10 lg:mt-12">
-        <button className="bg-white py-1 px-4 sm:py-2 sm:px-6 md:px-12 rounded-lg text-black font-medium text-xs sm:text-sm md:text-base">
+        {/* <button className="bg-white py-1 px-4 sm:py-2 sm:px-6 md:px-12 rounded-lg text-black font-medium text-xs sm:text-sm md:text-base">
           Play
-        </button>
+        </button> */}
 
         <button className="bg-gray-500 bg-opacity-50  py-1 px-4 sm:py-2 sm:px-6 md:px-12 rounded-lg text-white font-medium text-xs sm:text-sm md:text-base">
           More Info
