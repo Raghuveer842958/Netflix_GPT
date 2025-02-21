@@ -25,6 +25,12 @@ export const API_OPTIONS = {
   },
 };
 
+// const movieResponse = await fetch(
+//   "https://cors-anywhere.herokuapp.com/https://api.themoviedb.org/3/movie/now_playing?page=1",
+//   API_OPTIONS
+// );
+
+
 // export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
 
 
